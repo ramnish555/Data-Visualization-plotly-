@@ -4,8 +4,9 @@ from plotly import offline
 import requests
 
 
-date1 = input('Enter date (YYYY-MM-DD) :: ')
-url = f'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={date1}'
+date1 = input('Enter start date (YYYY-MM-DD) :: ')
+date2 = input('Enter end date (YYYY-MM-DD) :: ')
+url = f'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={date1}&endtime={date}'
 r = requests.get(url)
 print(f"Status Code {r.status_code}")
 if(r.status_code == 200):
